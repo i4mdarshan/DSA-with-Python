@@ -9,9 +9,6 @@ from jovian.pythondsa import evaluate_test_case
 
 # Brute force Solution
 def locate_card(cards,query):
-    # pass
-    position = 0
-
     if len(cards) > 0:
         for position in range(len(cards)):
             if cards[position] == query:
