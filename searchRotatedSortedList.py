@@ -41,11 +41,15 @@ def search(nums, target):
             if mid_number == target:
                 return mid
             elif mid_number > nums[lo]:
+                # since the portions of array are sorted in ascending order, so if the target is GREATER THAN first element and target is LESS than the middle element that means the target lies on the LEFT side from the mid element so my higher index changes to mid element index
+                # Otherwise the element lies in the RIGHT side of the array that is the lower index changes to mid + 1 index
                 if target >= nums[lo] and target < mid_number:
                     hi = mid
                 else:
                     lo = mid + 1
             else:
+                # since the portions of array are sorted in ascending order, so if the target is LESS THAN last element and target is GREATER than the middle element that means the target lies on the RIGHT side from the mid element so my LOWER index changes to mid element index + 1
+                # Otherwise the element lies in the LEFT side of the array that is the HIGHER index changes to mid index
                 if target <= nums[hi-1] and target > mid_number:
                     lo = mid + 1
                 else:
